@@ -7,8 +7,10 @@ class Dog
     @breed = breed
   end
   
-  def self.create
+  def self.create(name:,breed:)
+    sql = <<-SQL
     
+    SQL
   end
   
   def self.find_or_create_by(name:, breed:)
