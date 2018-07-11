@@ -1,5 +1,4 @@
 class Dog 
-  
   attr_accessor :id, :name, :breed
   
   def initialize(id=nil, name, breed)
@@ -8,15 +7,19 @@ class Dog
     @breed = breed
   end
   
-  def self.find_or_create_by(name:, album:)
-    dog= DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND album = ?", name, album)
-    if !song.empty?
-      song_data = song[0]
-      dog= Song.new(song_data[0], song_data[1], song_data[2])
+  def self.create
+    
+  end
+  
+  def self.find_or_create_by(name:, breed:)
+    dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
+    if !dog.empty?
+      dog_data = dog[0]
+      dog= dog.new(dog_data[0], dog_data[1], dog_data[2])
     else
-      dog= self.create(name: name, album: album)
+      dog= self.create(name: name, breed: breed)
     end
-    song
+    dog
   end 
   
 end
