@@ -55,5 +55,8 @@ class Dog
     dog
   end 
   
+  def drop_table
+    
+  end
 end
       
