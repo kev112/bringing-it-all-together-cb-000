@@ -59,5 +59,8 @@ class Dog
     sql = "DROP TABLE IF EXISTS dogs"
     DB[:conn].execute(sql)
   end
+  
+  def self.find_by_name(name)
+  end
 end
         
