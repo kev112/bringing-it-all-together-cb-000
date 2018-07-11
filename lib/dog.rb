@@ -1,4 +1,11 @@
 class Dog 
+  
+  attr_accessor 
+  
+  def initialize
+    
+  end
+  
   def self.find_or_create_by(name:, album:)
     song = DB[:conn].execute("SELECT * FROM songs WHERE name = ? AND album = ?", name, album)
     if !song.empty?
@@ -9,4 +16,5 @@ class Dog
     end
     song
   end 
+  
 end
