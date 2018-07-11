@@ -11,6 +11,7 @@ class Dog
     sql = <<-SQL
     
     SQL
+    DB[:conn].execute(sql, name, breed)
   end
   
   def self.find_or_create_by(name:, breed:)
