@@ -7,15 +7,15 @@ class Dog
     @breed = breed
   end
   
-  def self.save
-    
-  end
-  
-  def self.create(name:,breed:)
+  def save
     sql = <<-SQL
     
     SQL
     DB[:conn].execute(sql, name, breed)
+  end
+  
+  def self.create(name:,breed:)
+
   end
   
   def self.find_or_create_by(name:, breed:)
