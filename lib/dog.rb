@@ -7,6 +7,10 @@ class Dog
     @breed = breed
   end
   
+  def self.save
+    
+  end
+  
   def self.create(name:,breed:)
     sql = <<-SQL
     
