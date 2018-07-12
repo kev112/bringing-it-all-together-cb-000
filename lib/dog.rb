@@ -95,7 +95,7 @@ class Dog
   end
   
   def drop_table
-    
+    DB[:conn].execute('DROP TABLE IF EXISTS dogs')
   end
 end
         
