@@ -82,10 +82,10 @@ class Dog
     sql =  <<-SQL
       SELECT *
       FROM dogs
-      WHERE name = ?
+      WHERE id = ?
       LIMIT 1
     SQL
-    row = DB[:conn].execute(sql, name).flatten
+    row = DB[:conn].execute(sql, id).flatten
     new_from_db(row)
   end
   
