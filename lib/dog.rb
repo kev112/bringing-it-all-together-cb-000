@@ -74,7 +74,7 @@ class Dog
       WHERE name = ?
       LIMIT 1
     SQL
-    row = execute(sql, name)
+    row = DB[:conn].execute(sql, name)
     new_from_db(row)
   end
   
