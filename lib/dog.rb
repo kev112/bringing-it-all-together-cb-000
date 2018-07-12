@@ -72,6 +72,9 @@ class Dog
   end
   
   def update
+    sql = <<- SQL
+    
+    SQL
     DB[:conn].execute(sql, name, breed, id)
   end
 end
