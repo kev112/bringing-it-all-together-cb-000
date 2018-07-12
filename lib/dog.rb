@@ -78,6 +78,17 @@ class Dog
     new_from_db(row)
   end
   
+  def self.find_by_id(id)
+    sql =  <<-SQL
+      SELECT *
+      FROM dogs
+      WHERE name = ?
+      LIMIT 1
+    SQL
+    row = DB[:conn].execute(sql, name).flatten
+    new_from_db(row)
+  end
+  
   def update
     sql = "UPDATE dogs SET name = ?, breed = ?  WHERE id = ?"
     DB[:conn].execute(sql, self.name, self.breed, self.id)
